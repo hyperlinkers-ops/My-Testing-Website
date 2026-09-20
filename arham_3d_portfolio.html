@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Arham — SEO Specialist, Guest Posting Expert and Web Professional.">
+<title>Arham | Digital Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050509;--text:#f7f9ff;--muted:#a7adbf;--cyan:#00f6ff;
+  --purple:#8b5cf6;--pink:#ff3cac;--card:rgba(255,255,255,.055);
+  --border:rgba(255,255,255,.12)
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+#stars{position:fixed;inset:0;z-index:-4;background:
+ radial-gradient(circle at 15% 20%,rgba(0,246,255,.12),transparent 27%),
+ radial-gradient(circle at 85% 35%,rgba(139,92,246,.15),transparent 30%),
+ radial-gradient(circle at 50% 100%,rgba(255,60,172,.10),transparent 35%),
+ #050509}
+#stars:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:55px 55px;transform:perspective(600px) rotateX(62deg) scale(1.5);transform-origin:center bottom;animation:grid 12s linear infinite}
+@keyframes grid{to{background-position:0 55px}}
+.particles{position:fixed;inset:0;z-index:-2;pointer-events:none}
+.particle{position:absolute;width:3px;height:3px;background:var(--cyan);border-radius:50%;box-shadow:0 0 14px var(--cyan);animation:float linear infinite}
+@keyframes float{from{transform:translateY(105vh);opacity:0}15%,80%{opacity:1}to{transform:translateY(-10vh);opacity:0}}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1100px,92%);z-index:10;padding:13px 18px;border:1px solid var(--border);border-radius:22px;background:rgba(5,5,9,.62);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.logo{font-weight:900;font-size:22px;letter-spacing:1px}.logo span{color:var(--cyan)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:#cfd3df}.navlinks a{transition:.3s}.navlinks a:hover{color:var(--cyan)}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+section{width:min(1100px,92%);margin:auto;padding:110px 0}
+.hero{min-height:100vh;display:grid;place-items:center;padding-top:130px}
+.hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center;width:100%}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(0,246,255,.25);border-radius:100px;background:rgba(0,246,255,.06);color:#b9fcff;font-size:13px;margin-bottom:20px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(55px,8vw,105px);line-height:.92;letter-spacing:-5px;margin-bottom:25px}
+.gradient{background:linear-gradient(90deg,#fff,var(--cyan),var(--purple),#fff);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300%}}
+.hero p{font-size:18px;color:var(--muted);max-width:650px}
+.buttons{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:13px 21px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.05);transition:.35s;font-weight:700}
+.btn.primary{background:var(--cyan);color:#001014;border-color:var(--cyan);box-shadow:0 0 25px rgba(0,246,255,.2)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.btn.primary:hover{box-shadow:0 0 35px rgba(0,246,255,.5)}
+.scene{height:480px;display:grid;place-items:center;perspective:1000px}
+.cube{width:280px;height:280px;position:relative;transform-style:preserve-3d;animation:spin 14s linear infinite}
+.face{position:absolute;inset:0;border:1px solid rgba(0,246,255,.45);background:linear-gradient(135deg,rgba(0,246,255,.09),rgba(139,92,246,.07));backdrop-filter:blur(4px);display:grid;place-items:center;font-size:70px;font-weight:900;text-shadow:0 0 30px var(--cyan);box-shadow:inset 0 0 45px rgba(0,246,255,.08)}
+.front{transform:translateZ(140px)}.back{transform:rotateY(180deg) translateZ(140px)}.right{transform:rotateY(90deg) translateZ(140px)}.left{transform:rotateY(-90deg) translateZ(140px)}.top{transform:rotateX(90deg) translateZ(140px)}.bottom{transform:rotateX(-90deg) translateZ(140px)}
+@keyframes spin{to{transform:rotateX(360deg) rotateY(360deg)}}
+.orb{position:absolute;width:330px;height:330px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));filter:blur(85px);opacity:.18;animation:orb 6s ease-in-out infinite alternate}
+@keyframes orb{to{transform:translate(45px,-30px) scale(1.15)}}
+.section-title{font-size:clamp(34px,5vw,58px);line-height:1;margin-bottom:12px;letter-spacing:-2px}.section-title span{color:var(--cyan)}
+.section-lead{color:var(--muted);max-width:650px;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:28px;border:1px solid var(--border);background:var(--card);border-radius:22px;backdrop-filter:blur(15px);transition:.4s;transform-style:preserve-3d}
+.card:hover{transform:translateY(-8px) rotateX(2deg);border-color:rgba(0,246,255,.35);box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.icon{font-size:30px;margin-bottom:14px}.card h3{margin-bottom:9px;font-size:20px}.card p{color:var(--muted);font-size:14px}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:10px 14px;border:1px solid var(--border);border-radius:100px;background:rgba(255,255,255,.045);color:#dfe4f2;font-size:14px}
+.timeline{display:grid;gap:15px}.job{display:grid;grid-template-columns:150px 1fr;gap:25px;padding:25px;border-left:2px solid var(--cyan);background:linear-gradient(90deg,rgba(0,246,255,.05),transparent);border-radius:0 18px 18px 0}.job small{color:var(--cyan)}.job p{color:var(--muted);margin-top:6px}
+.project{min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;position:relative}.project:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(0,246,255,.22),transparent 35%),linear-gradient(135deg,rgba(139,92,246,.16),rgba(255,60,172,.08));z-index:-1}.tag{font-size:12px;color:var(--cyan);margin-bottom:7px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-box{padding:35px;border:1px solid var(--border);border-radius:25px;background:var(--card)}.contact-box p{color:var(--muted);margin:12px 0 22px}.contact-list{display:grid;gap:12px}.contact-list a{padding:12px;border-radius:12px;background:rgba(255,255,255,.04);color:#dfe4f2}
+footer{border-top:1px solid var(--border);padding:28px 4%;color:#7e8495;text-align:center;font-size:13px}
+.reveal{opacity:0;transform:translateY(25px);transition:1s}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){.navlinks{display:none}.menu{display:block}.hero-wrap{grid-template-columns:1fr}.scene{height:350px}.cube{width:210px;height:210px}.front{transform:translateZ(105px)}.back{transform:rotateY(180deg) translateZ(105px)}.right{transform:rotateY(90deg) translateZ(105px)}.left{transform:rotateY(-90deg) translateZ(105px)}.top{transform:rotateX(90deg) translateZ(105px)}.bottom{transform:rotateX(-90deg) translateZ(105px)}.grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:5px}}
+@media(max-width:500px){section{padding:80px 0}h1{letter-spacing:-3px}.hero p{font-size:16px}.scene{height:300px}.cube{width:170px;height:170px}.front{transform:translateZ(85px)}.back{transform:rotateY(180deg) translateZ(85px)}.right{transform:rotateY(90deg) translateZ(85px)}.left{transform:rotateY(-90deg) translateZ(85px)}.top{transform:rotateX(90deg) translateZ(85px)}.bottom{transform:rotateX(-90deg) translateZ(85px)}}
+</style>
+</head>
+<body>
+
+<div id="stars"></div>
+<div class="particles" id="particles"></div>
+
+<nav>
+  <a class="logo" href="#home">AR<span>HAM</span>.</a>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-wrap">
+    <div class="reveal">
+      <div class="badge"><span class="dot"></span> Available for new projects</div>
+      <h1>Hi, I'm <span class="gradient">Arham.</span></h1>
+      <p>I’m a digital professional focused on SEO, guest posting, content, and modern web experiences. I build strategies that turn ideas into measurable online growth.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">View My Work</a>
+        <a class="btn" href="#contact">Let's Connect</a>
+      </div>
+    </div>
+    <div class="scene reveal">
+      <div class="orb"></div>
+      <div class="cube">
+        <div class="face front">A</div><div class="face back">R</div>
+        <div class="face right">H</div><div class="face left">A</div>
+        <div class="face top">M</div><div class="face bottom">✦</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <h2 class="section-title">About <span>Me</span></h2>
+  <p class="section-lead">I combine SEO, content, outreach, and web skills to help businesses build a stronger digital presence.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">🚀</div><h3>SEO Growth</h3><p>Keyword research, technical audits, on-page optimization, link building and performance tracking.</p></div>
+    <div class="card"><div class="icon">✍️</div><h3>Content</h3><p>SEO-focused articles, guest posts, landing-page copy and content strategies built around search intent.</p></div>
+    <div class="card"><div class="icon">🌐</div><h3>Web</h3><p>Modern responsive websites and interfaces with a focus on clean structure, speed and user experience.</p></div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <h2 class="section-title">My <span>Skills</span></h2>
+  <p class="section-lead">A practical digital toolkit for search, content, outreach and web projects.</p>
+  <div class="card">
+    <div class="skills">
+      <span class="skill">SEO</span><span class="skill">Keyword Research</span><span class="skill">Guest Posting</span>
+      <span class="skill">Link Building</span><span class="skill">Ahrefs</span><span class="skill">SEMrush</span>
+      <span class="skill">Google Search Console</span><span class="skill">GA4</span><span class="skill">Screaming Frog</span>
+      <span class="skill">Content Writing</span><span class="skill">WordPress</span><span class="skill">Shopify</span>
+      <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">Outreach</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <h2 class="section-title">My <span>Experience</span></h2>
+  <p class="section-lead">Experience across SEO, content and digital projects.</p>
+  <div class="timeline">
+    <div class="job"><small>SEO</small><div><h3>SEO Specialist</h3><p>Working on organic growth through keyword research, technical SEO, content optimization and authority building.</p></div></div>
+    <div class="job"><small>Content</small><div><h3>Content Writer</h3><p>Creating search-focused content designed to match user intent and support business goals.</p></div></div>
+    <div class="job"><small>Web</small><div><h3>WordPress & Shopify</h3><p>Building and improving responsive websites, layouts, forms and conversion-focused pages.</p></div></div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <h2 class="section-title">Featured <span>Projects</span></h2>
+  <p class="section-lead">A few examples of the type of digital work this portfolio can showcase.</p>
+  <div class="grid">
+    <div class="card project"><div><div class="tag">SEO • LOCAL</div><h3>Chauffeur SEO Project</h3><p>Content strategy, on-page SEO, authority building and ranking-focused growth for a luxury transportation brand.</p></div></div>
+    <div class="card project"><div><div class="tag">OUTREACH • LINKS</div><h3>Guest Posting Campaign</h3><p>Publisher outreach and contextual backlink campaigns designed around relevant niches and search authority.</p></div></div>
+    <div class="card project"><div><div class="tag">WEB • DESIGN</div><h3>Modern Business Website</h3><p>A responsive, premium interface concept with clear calls to action and a strong visual identity.</p></div></div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contact">
+    <div>
+      <h2 class="section-title">Let's build something <span>great.</span></h2>
+      <p class="section-lead">Have an SEO, content or web project? Send me a message and let's discuss it.</p>
+    </div>
+    <div class="contact-box">
+      <h3>Get in touch</h3>
+      <p>Replace these links with your real contact details.</p>
+      <div class="contact-list">
+        <a href="mailto:your@email.com">✉️ your@email.com</a>
+        <a href="https://www.linkedin.com/" target="_blank">in LinkedIn profile</a>
+        <a href="#home">↑ Back to top</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Arham. Built with HTML & CSS.</footer>
+
+<script>
+const particleBox=document.getElementById('particles');
+for(let i=0;i<35;i++){
+  const p=document.createElement('span');
+  p.className='particle';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(6+Math.random()*12)+'s';
+  p.style.animationDelay=(-Math.random()*15)+'s';
+  p.style.opacity=Math.random();
+  particleBox.appendChild(p);
+}
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function toggleMenu(){
+  const n=document.querySelector('.navlinks');
+  n.style.display=n.style.display==='flex'?'none':'flex';
+  n.style.position='absolute';n.style.top='65px';n.style.right='0';
+  n.style.flexDirection='column';n.style.padding='18px';
+  n.style.background='rgba(5,5,9,.95)';n.style.border='1px solid rgba(255,255,255,.12)';
+  n.style.borderRadius='15px';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Arham</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050509;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: -5;
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(0, 246, 255, 0.14),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 30%,
+          rgba(139, 92, 246, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(255, 60, 172, 0.10),
+          transparent 35%
+        ),
+        #050509;
+    }
+
+    /* 3D GRID */
+
+    .grid {
+      position: fixed;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.035) 1px,
+          transparent 1px
+        );
+
+      background-size: 55px 55px;
+
+      transform:
+        perspective(600px)
+        rotateX(62deg)
+        scale(1.5);
+
+      transform-origin: center bottom;
+
+      animation: gridMove 12s linear infinite;
+
+      z-index: -4;
+    }
+
+    @keyframes gridMove {
+
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 0 55px;
+      }
+
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+
+      position: fixed;
+
+      top: 18px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: min(1100px, 92%);
+
+      padding: 13px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(5,5,9,0.65);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+      border-radius: 20px;
+
+      backdrop-filter: blur(18px);
+
+      z-index: 20;
+
+      box-shadow:
+        0 15px 50px
+        rgba(0,0,0,0.35);
+    }
+
+    .logo {
+      color: #f8f9fa;  
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #67c2f7;
+    }
+
+    .nav-links {
+
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+
+      color: #b9bdca;
+
+      font-size: 14px;
+
+      text-decoration: none;
+
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00f6ff;
+    }
+
+    /* =========================
+       CONTACT SECTION
+    ========================= */
+
+    .contact-page {
+
+      width: min(1100px, 92%);
+
+      min-height: 100vh;
+
+      margin: auto;
+
+      padding-top: 150px;
+      padding-bottom: 80px;
+
+      display: grid;
+
+      grid-template-columns:
+        0.9fr 1.1fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    /* LEFT SIDE */
+
+    .contact-info {
+
+      animation:
+        slideLeft 1s ease forwards;
+
+      opacity: 0;
+    }
+
+    @keyframes slideLeft {
+
+      from {
+        opacity: 0;
+        transform:
+          translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateX(0);
+      }
+
+    }
+
+    .small-title {
+
+      display: inline-block;
+
+      padding: 8px 14px;
+
+      border:
+        1px solid
+        rgba(0,246,255,0.3);
+
+      border-radius: 50px;
+
+      color: #00f6ff;
+
+      background:
+        rgba(0,246,255,0.05);
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 20px;
+    }
+
+    .contact-info h1 {
+
+      font-size:
+        clamp(55px, 7vw, 95px);
+
+      line-height: 0.95;
+
+      letter-spacing: -5px;
+
+      margin-bottom: 25px;
+    }
+
+    .gradient {
+
+      background:
+        linear-gradient(
+          90deg,
+          white,
+          #00f6ff,
+          #8b5cf6,
+          white
+        );
+
+      background-size: 300%;
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+      color: transparent;
+
+      animation:
+        gradientMove 6s linear infinite;
+    }
+
+    @keyframes gradientMove {
+
+      from {
+        background-position: 0%;
+      }
+
+      to {
+        background-position: 300%;
+      }
+
+    }
+
+    .contact-info > p {
+
+      color: #a7adbf;
+
+      font-size: 17px;
+
+      max-width: 480px;
+
+      line-height: 1.8;
+
+      margin-bottom: 35px;
+    }
+
+    /* CONTACT DETAILS */
+
+    .details {
+
+      display: grid;
+
+      gap: 15px;
+    }
+
+    .detail {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 15px;
+
+      width: fit-content;
+
+      min-width: 300px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+      background:
+        rgba(255,255,255,0.04);
+
+      border-radius: 14px;
+
+      transition: 0.3s;
+    }
+
+    .detail:hover {
+
+      transform:
+        translateX(8px);
+
+      border-color:
+        rgba(0,246,255,0.4);
+
+      box-shadow:
+        0 0 25px
+        rgba(0,246,255,0.08);
+    }
+
+    .detail-icon {
+
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        rgba(0,246,255,0.08);
+
+      font-size: 20px;
+    }
+
+    .detail-text small {
+
+      display: block;
+
+      color: #777e91;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+    }
+
+    .detail-text span {
+
+      display: block;
+
+      margin-top: 2px;
+
+      color: #e4e7f0;
+
+      font-size: 14px;
+    }
+
+    /* =========================
+       CONTACT FORM
+    ========================= */
+
+    .form-card {
+
+      position: relative;
+
+      padding: 40px;
+
+      border-radius: 28px;
+
+      background:
+        rgba(255,255,255,0.055);
+
+      border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+      backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 25px 80px
+        rgba(0,0,0,0.35),
+        inset 0 0 40px
+        rgba(255,255,255,0.025);
+
+      transform-style: preserve-3d;
+
+      animation:
+        formFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes formFloat {
+
+      0%,100% {
+        transform:
+          translateY(0)
+          rotateX(0deg);
+      }
+
+      50% {
+        transform:
+          translateY(-8px)
+          rotateX(1deg);
+      }
+
+    }
+
+    /* GLOW */
+
+    .form-card::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      top: -80px;
+      right: -80px;
+
+      border-radius: 50%;
+
+      background: #00f6ff;
+
+      filter: blur(100px);
+
+      opacity: 0.15;
+
+      pointer-events: none;
+    }
+
+    .form-card h2 {
+
+      font-size: 28px;
+
+      margin-bottom: 8px;
+    }
+
+    .form-card > p {
+
+      color: #858b9d;
+
+      font-size: 14px;
+
+      margin-bottom: 30px;
+    }
+
+    .input-group {
+
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+
+      display: block;
+
+      font-size: 12px;
+
+      color: #aeb3c2;
+
+      margin-bottom: 8px;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select {
+
+      width: 100%;
+
+      padding: 15px;
+
+      border-radius: 12px;
+
+      border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+      outline: none;
+
+      background:
+        rgba(0,0,0,0.25);
+
+      color: white;
+
+      font-size: 14px;
+
+      transition: 0.3s;
+    }
+
+    .input-group input::placeholder,
+    .input-group textarea::placeholder {
+
+      color: #666d7e;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus,
+    .input-group select:focus {
+
+      border-color: #00f6ff;
+
+      box-shadow:
+        0 0 20px
+        rgba(0,246,255,0.08);
+    }
+
+    .input-group textarea {
+
+      min-height: 130px;
+
+      resize: vertical;
+    }
+
+    .input-group select option {
+
+      background: #101018;
+    }
+
+    .submit-btn {
+
+      width: 100%;
+
+      padding: 15px;
+
+      border: none;
+
+      border-radius: 12px;
+
+      background: #00f6ff;
+
+      color: #001014;
+
+      font-size: 15px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: 0.35s;
+
+      box-shadow:
+        0 0 25px
+        rgba(0,246,255,0.2);
+    }
+
+    .submit-btn:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 0 40px
+        rgba(0,246,255,0.5);
+    }
+
+    /* =========================
+       SUCCESS MESSAGE
+    ========================= */
+
+    .success {
+
+      display: none;
+
+      margin-top: 15px;
+
+      padding: 12px;
+
+      border-radius: 10px;
+
+      text-align: center;
+
+      color: #75fff2;
+
+      background:
+        rgba(0,246,255,0.08);
+
+      border:
+        1px solid
+        rgba(0,246,255,0.2);
+
+      font-size: 13px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 25px;
+
+      color: #626879;
+
+      font-size: 12px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .contact-page {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding-top: 130px;
+      }
+
+      .contact-info h1 {
+
+        font-size: 65px;
+
+      }
+
+      .form-card {
+
+        padding: 25px;
+      }
+
+    }
+
+    @media(max-width:500px) {
+
+      .contact-page {
+
+        width: 90%;
+      }
+
+      .contact-info h1 {
+
+        font-size: 55px;
+
+        letter-spacing: -3px;
+      }
+
+      .contact-info > p {
+
+        font-size: 15px;
+      }
+
+      .detail {
+
+        min-width: 100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background"></div>
+
+<div class="grid"></div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <a href="index.html" class="logo">
+    AR<span>HAM</span>.
+  </a>
+
+  <div class="nav-links">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="skills.html">
+      Skills
+    </a>
+
+    <a href="reviews.html">
+      Reviews
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+  </div>
+
+</nav>
+
+
+<!-- CONTACT -->
+
+<main class="contact-page">
+
+
+  <!-- LEFT -->
+
+  <div class="contact-info">
+
+    <div class="small-title">
+      LET'S CONNECT
+    </div>
+
+    <h1>
+      Let's<br>
+      <span class="gradient">
+        Talk.
+      </span>
+    </h1>
+
+    <p>
+      Have a project, SEO campaign, website idea,
+      or just want to say hello? Send me a message.
+      I'll get back to you as soon as possible.
+    </p>
+
+
+    <div class="details">
+
+      <div class="detail">
+
+        <div class="detail-icon">
+          ✉️
+        </div>
+
+        <div class="detail-text">
+
+          <small>
+            Email
+          </small>
+
+          <span>
+            help.hyperlinkers@gmail.com
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-icon">
+          💼
+        </div>
+
+        <div class="detail-text">
+
+          <small>
+            LinkedIn
+          </small>
+
+          <span>
+            linkedin.com/in/arham-malik-198669248
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-icon">
+          🌍
+        </div>
+
+        <div class="detail-text">
+
+          <small>
+            Availability
+          </small>
+
+          <span>
+            Open for new projects
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FORM -->
+
+  <div class="form-card">
+
+    <h2>
+      Send a Message
+    </h2>
+
+    <p>
+      Tell me a little about your project.
+    </p>
+
+
+    <form id="https://formspree.io/f/moeveqbo">
+
+      <div class="input-group">
+
+        <label>
+          Your Name
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your name"
+          required
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          Email Address
+        </label>
+
+        <input
+          type="email"
+          name="name"
+          id="email"
+          placeholder="you@example.com"
+          required
+        >
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          What do you need?
+        </label>
+
+        <select id="service">
+
+          <option value="">
+            Select a service
+          </option>
+
+          <option>
+            SEO
+          </option>
+
+          <option>
+            Guest Posting
+          </option>
+
+          <option>
+            Link Building
+          </option>
+
+          <option>
+            Content Writing
+          </option>
+
+          <option>
+            Website Development
+          </option>
+
+          <option>
+            Other
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="input-group">
+
+        <label>
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          placeholder="Tell me about your project..."
+          required
+        ></textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="submit-btn"
+      >
+        Send Message →
+      </button>
+
+
+      <div
+        class="success"
+        id="successMessage"
+      >
+        ✓ Message form submitted successfully!
+      </div>
+
+    </form>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  © 2026 Arham. All rights reserved.
+
+</footer>
+
+</body>
+</html>
+```

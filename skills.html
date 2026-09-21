@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skills | Arham</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050816;
+            color: #f8f9fa;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           ANIMATED BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(0, 180, 255, 0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(120, 70, 255, 0.12),
+                    transparent 30%
+                );
+
+            z-index: -3;
+        }
+
+        .grid {
+            position: fixed;
+            width: 200%;
+            height: 100%;
+            left: -50%;
+            bottom: -45%;
+
+            background-image:
+                linear-gradient(
+                    rgba(80, 190, 255, 0.13) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(80, 190, 255, 0.13) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+
+            transform: perspective(500px) rotateX(65deg);
+
+            animation: gridMove 12s linear infinite;
+
+            z-index: -2;
+        }
+
+        @keyframes gridMove {
+            from {
+                transform:
+                    perspective(500px)
+                    rotateX(65deg)
+                    translateY(0);
+            }
+
+            to {
+                transform:
+                    perspective(500px)
+                    rotateX(65deg)
+                    translateY(55px);
+            }
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 25px auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.02);
+
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #f8f9fa;
+
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 1px;
+
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #67c2f7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #dce7f3;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s ease;
+
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #67c2f7;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            left: 0;
+            bottom: -7px;
+
+            background: #67c2f7;
+
+            transition: 0.3s ease;
+
+            box-shadow: 0 0 10px #67c2f7;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================
+           SKILLS HERO
+        ========================= */
+
+        .skills-hero {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 80px auto 0;
+
+            text-align: center;
+
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .small-title {
+            color: #67c2f7;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .skills-hero h1 {
+            font-size: clamp(50px, 8vw, 90px);
+
+            line-height: 0.95;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #67c2f7,
+                    #9b7cff
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            text-shadow:
+                0 0 40px rgba(103, 194, 247, 0.15);
+        }
+
+        .skills-hero p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #aebdcc;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+        /* =========================
+           SKILLS SECTION
+        ========================= */
+
+        .skills-section {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 80px auto 100px;
+        }
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+        /* =========================
+           SKILL CARD
+        ========================= */
+
+        .skill-card {
+            position: relative;
+
+            padding: 30px;
+
+            min-height: 310px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.11);
+
+            border-radius: 24px;
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            top: -80px;
+            right: -80px;
+
+            border-radius: 50%;
+
+            background: rgba(103,194,247,0.12);
+
+            filter: blur(10px);
+        }
+
+        .skill-card:hover {
+            transform:
+                translateY(-12px)
+                rotateX(3deg);
+
+            border-color:
+                rgba(103,194,247,0.45);
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,180,255,0.12);
+        }
+
+        /* =========================
+           SKILL ICON
+        ========================= */
+
+        .skill-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 18px;
+
+            background:
+                rgba(103,194,247,0.08);
+
+            border:
+                1px solid
+                rgba(103,194,247,0.3);
+
+            color: #67c2f7;
+
+            font-size: 23px;
+
+            font-weight: 900;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                inset 0 0 20px
+                rgba(103,194,247,0.05);
+        }
+
+        .skill-card h2 {
+            font-size: 23px;
+
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #9eacbb;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+        }
+
+        /* =========================
+           SKILL BAR
+        ========================= */
+
+        .skill-info {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+
+            font-size: 12px;
+
+            color: #b8c5d3;
+        }
+
+        .skill-info span:last-child {
+            color: #67c2f7;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 6px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #67c2f7,
+                    #9b7cff
+                );
+
+            box-shadow:
+                0 0 12px
+                rgba(103,194,247,0.5);
+        }
+
+        .seo {
+            width: 95%;
+        }
+
+        .link-building {
+            width: 92%;
+        }
+
+        .content {
+            width: 90%;
+        }
+
+        .wordpress {
+            width: 85%;
+        }
+
+        .shopify {
+            width: 82%;
+        }
+
+        .web {
+            width:85%;
+        }
+
+        /* =========================
+           TOOLS SECTION
+        ========================= */
+
+        .tools-section {
+            width: 90%;
+            max-width: 1100px;
+
+            margin: 0 auto 100px;
+
+            text-align: center;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #67c2f7;
+
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+
+            margin-top: 12px;
+        }
+
+        .tools {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 15px;
+        }
+
+        .tool {
+            padding: 14px 22px;
+
+            border-radius: 50px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            color: #c8d4df;
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s ease;
+        }
+
+        .tool:hover {
+            color: #67c2f7;
+
+            border-color:
+                rgba(103,194,247,0.4);
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(103,194,247,0.1);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            width: 90%;
+            max-width: 1000px;
+
+            margin: 80px auto;
+
+            padding: 60px 40px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(103,194,247,0.1),
+                    rgba(120,80,255,0.08)
+                );
+
+            border:
+                1px solid
+                rgba(103,194,247,0.2);
+
+            backdrop-filter: blur(20px);
+        }
+
+        .cta h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #a9b6c5;
+
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            border-radius: 12px;
+
+            background: #67c2f7;
+
+            color: #04101a;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+
+            box-shadow:
+                0 0 25px
+                rgba(103,194,247,0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 0 35px
+                rgba(103,194,247,0.45);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: 50px auto 25px;
+
+            padding-top: 25px;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color: #718091;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                flex-direction: column;
+
+                gap: 18px;
+            }
+
+            .nav-links {
+                gap: 16px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .skills-hero {
+                margin-top: 60px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                min-height: auto;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .navbar {
+                width: 94%;
+
+                padding: 15px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .skills-hero {
+                width: 94%;
+            }
+
+            .skills-section {
+                width: 94%;
+            }
+
+            .skills-hero h1 {
+                font-size: 55px;
+            }
+
+            .skill-card {
+                padding: 25px;
+            }
+
+            .cta {
+                padding: 45px 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated 3D Grid -->
+    <div class="grid"></div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            AR<span>HAM</span>.
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="skills.html">Skills</a>
+
+            <a href="reviews.html">Reviews</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         SKILLS INTRO
+    ========================= -->
+
+    <section class="skills-hero">
+
+        <div class="small-title">
+            My Expertise
+        </div>
+
+        <h1>
+            Skills
+        </h1>
+
+        <p>
+            A combination of SEO, digital marketing, content,
+            and web development skills that I use to build
+            stronger online experiences and help businesses
+            grow digitally.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS CARDS
+    ========================= -->
+
+    <section class="skills-section">
+
+        <div class="skills-grid">
+
+
+            <!-- SEO -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    SEO
+                </div>
+
+                <h2>Search Engine Optimization</h2>
+
+                <p>
+                    Keyword research, on-page SEO, technical SEO,
+                    SEO audits and organic growth strategies.
+                </p>
+
+                <div class="skill-info">
+                    <span>Experience</span>
+                    <span>95%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress seo"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Link Building -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    🔗
+                </div>
+
+                <h2>Link Building</h2>
+
+                <p>
+                    Guest posting, outreach, backlink research
+                    and authority-building strategies.
+                </p>
+
+                <div class="skill-info">
+                    <span>Experience</span>
+                    <span>92%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress link-building"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Content -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    ✍
+                </div>
+
+                <h2>Content Writing</h2>
+
+                <p>
+                    SEO-friendly articles, website content,
+                    blog posts and digital marketing copy.
+                </p>
+
+                <div class="skill-info">
+                    <span>Experience</span>
+                    <span>90%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress content"></div>
+                </div>
+
+            </div>
+
+
+            <!-- WordPress -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    WP
+                </div>
+
+                <h2>WordPress</h2>
+
+                <p>
+                    Website management, customization,
+                    optimization and content implementation.
+                </p>
+
+                <div class="skill-info">
+                    <span>Experience</span>
+                    <span>85%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress wordpress"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Shopify -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    S
+                </div>
+
+                <h2>Shopify</h2>
+
+                <p>
+                    Shopify website customization, store
+                    structure and user-friendly web experiences.
+                </p>
+
+                <div class="skill-info">
+                    <span>Experience</span>
+                    <span>82%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress shopify"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Web Development -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon">
+                    &lt;/&gt;
+                </div>
+
+                <h2>Web Development</h2>
+
+                <p>
+                    Responsive websites using HTML, CSS and
+                    modern web development concepts.
+                </p>
+
+                <div class="skill-info">
+                    <span>Experience</span>
+                    <span>85%</span>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-progress web"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================= -->
+
+    <section class="tools-section">
+
+        <div class="section-title">
+
+            <span>Technology Stack</span>
+
+            <h2>Tools I Work With</h2>
+
+        </div>
+
+
+        <div class="tools">
+
+            <div class="tool">Ahrefs</div>
+
+            <div class="tool">SEMrush</div>
+
+            <div class="tool">Google Search Console</div>
+
+            <div class="tool">Google Analytics</div>
+
+            <div class="tool">Screaming Frog</div>
+
+            <div class="tool">Google Keyword Planner</div>
+
+            <div class="tool">WordPress</div>
+
+            <div class="tool">Shopify</div>
+
+            <div class="tool">HTML</div>
+
+            <div class="tool">CSS</div>
+
+            <div class="tool">VS Code</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="cta">
+
+        <h2>
+            Have a Project in Mind?
+        </h2>
+
+        <p>
+            Let's work together and turn your idea into
+            a professional digital experience.
+        </p>
+
+        <a href="contact.html" class="cta-button">
+            Contact Me
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 Arham. All Rights Reserved.
+
+    </footer>
+
+
+</body>
+</html>

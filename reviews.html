@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Client Testimonials | Arham</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050509;
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(0, 246, 255, 0.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(139, 92, 246, 0.16),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(255, 60, 172, 0.10),
+                    transparent 35%
+                ),
+                #050509;
+        }
+
+
+        /* =========================
+           3D GRID
+        ========================= */
+
+        .grid {
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+
+            transform:
+                perspective(600px)
+                rotateX(62deg)
+                scale(1.5);
+
+            transform-origin: center bottom;
+
+            animation: gridMove 12s linear infinite;
+
+            z-index: -4;
+        }
+
+
+        @keyframes gridMove {
+
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 0 55px;
+            }
+
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+
+            position: fixed;
+
+            top: 18px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(1100px, 92%);
+
+            padding: 13px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(5,5,9,0.65);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(18px);
+
+            z-index: 20;
+
+            box-shadow:
+                0 15px 50px
+                rgba(0,0,0,0.35);
+        }
+
+
+        .logo {
+
+            color: #f8f9fa;
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+            text-decoration: none;
+        }
+
+
+        .logo span {
+            color: #67c2f7;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 25px;
+        }
+
+
+        .nav-links a {
+
+            color: #b9bdca;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #67c2f7;
+
+            text-shadow:
+                0 0 15px
+                rgba(103,194,247,0.7);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .testimonials-page {
+
+            width: min(1100px, 92%);
+
+            margin: auto;
+
+            padding-top: 150px;
+
+            padding-bottom: 100px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .section-header {
+
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 70px;
+        }
+
+
+        .small-title {
+
+            color: #67c2f7;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .section-header h1 {
+
+            font-size: clamp(45px, 7vw, 80px);
+
+            line-height: 0.95;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .gradient {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    white,
+                    #00f6ff,
+                    #8b5cf6,
+                    white
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                gradientMove 6s linear infinite;
+        }
+
+
+        @keyframes gradientMove {
+
+            from {
+                background-position: 0%;
+            }
+
+            to {
+                background-position: 300%;
+            }
+
+        }
+
+
+        .section-header p {
+
+            color: #a7adbf;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           TESTIMONIAL GRID
+        ========================= */
+
+        .testimonial-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* =========================
+           TESTIMONIAL CARD
+        ========================= */
+
+        .testimonial-card {
+
+            position: relative;
+
+            padding: 35px;
+
+            min-height: 310px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.09),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.35),
+
+                inset 0 0 30px
+                rgba(255,255,255,0.025);
+
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+
+            overflow: hidden;
+        }
+
+
+        .testimonial-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -100px;
+
+            background:
+                rgba(0,246,255,0.10);
+
+            border-radius: 50%;
+
+            filter: blur(30px);
+
+            transition: 0.4s;
+        }
+
+
+        .testimonial-card:hover {
+
+            transform:
+                translateY(-12px)
+                rotateX(2deg);
+
+            border-color:
+                rgba(103,194,247,0.4);
+
+            box-shadow:
+                0 35px 90px
+                rgba(0,0,0,0.45),
+
+                0 0 35px
+                rgba(0,246,255,0.08);
+        }
+
+
+        .testimonial-card:hover::before {
+
+            transform: scale(1.5);
+
+            background:
+                rgba(0,246,255,0.16);
+        }
+
+
+        /* =========================
+           QUOTE
+        ========================= */
+
+        .quote {
+
+            font-size: 55px;
+
+            line-height: 0.7;
+
+            color: #67c2f7;
+
+            opacity: 0.7;
+
+            margin-bottom: 20px;
+
+            font-family: Georgia, serif;
+        }
+
+
+        /* =========================
+           STARS
+        ========================= */
+
+        .stars {
+
+            color: #67c2f7;
+
+            font-size: 17px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 0 12px
+                rgba(103,194,247,0.4);
+        }
+
+
+        /* =========================
+           TESTIMONIAL TEXT
+        ========================= */
+
+        .testimonial-text {
+
+            color: #d4d8e3;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           CLIENT
+        ========================= */
+
+        .client {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        .client-avatar {
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,246,255,0.18),
+                    rgba(139,92,246,0.18)
+                );
+
+            border:
+                1px solid
+                rgba(103,194,247,0.3);
+
+            color: #67c2f7;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            flex-shrink: 0;
+        }
+
+
+        .client-info h3 {
+
+            color: #f1f3f8;
+
+            font-size: 15px;
+
+            margin-bottom: 4px;
+        }
+
+
+        .client-info span {
+
+            color: #777e91;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+
+            margin-top: 80px;
+
+            padding: 55px 35px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            border-radius: 28px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(0,0,0,0.3);
+        }
+
+
+        .cta h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .cta p {
+
+            color: #a7adbf;
+
+            margin-bottom: 30px;
+
+            line-height: 1.7;
+        }
+
+
+        .cta-button {
+
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            background: #67c2f7;
+
+            color: #050509;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 0 25px
+                rgba(103,194,247,0.25);
+        }
+
+
+        .cta-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 0 45px
+                rgba(103,194,247,0.5);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #626879;
+
+            font-size: 12px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .testimonials-page {
+                padding-top: 130px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h1 {
+                font-size: 55px;
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .testimonials-page {
+                width: 90%;
+            }
+
+            .section-header h1 {
+                font-size: 48px;
+
+                letter-spacing: -3px;
+            }
+
+            .section-header p {
+                font-size: 15px;
+            }
+
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .testimonial-text {
+                font-size: 15px;
+            }
+
+            .cta {
+                padding: 40px 25px;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="background"></div>
+
+<div class="grid"></div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="index.html" class="logo">
+        AR<span>HAM</span>.
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="skills.html">
+            Skills
+        </a>
+
+        <a href="reviews.html">
+            Reviews
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- TESTIMONIALS -->
+
+<main class="testimonials-page">
+
+
+    <!-- HEADER -->
+
+    <div class="section-header">
+
+        <div class="small-title">
+            CLIENT FEEDBACK
+        </div>
+
+        <h1>
+            What Clients
+            <br>
+            <span class="gradient">
+                Say.
+            </span>
+        </h1>
+
+        <p>
+            Real feedback from clients I've worked with
+            across SEO, link building, content and digital projects.
+        </p>
+
+    </div>
+
+
+    <!-- TESTIMONIAL CARDS -->
+
+    <div class="testimonial-grid">
+
+
+        <!-- TESTIMONIAL 1 -->
+
+        <div class="testimonial-card">
+
+            <div class="quote">
+                “
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="testimonial-text">
+                Arham delivered exactly what we needed. His SEO
+                and link building work was professional, consistent,
+                and focused on quality.
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    JD
+                </div>
+
+                <div class="client-info">
+
+                    <h3>
+                        James Davis
+                    </h3>
+
+                    <span>
+                        Digital Marketing Manager
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TESTIMONIAL 2 -->
+
+        <div class="testimonial-card">
+
+            <div class="quote">
+                “
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="testimonial-text">
+                Great communication and excellent attention to
+                detail. Arham understood our requirements and
+                delivered high-quality guest posting opportunities.
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    SM
+                </div>
+
+                <div class="client-info">
+
+                    <h3>
+                        Sarah Miller
+                    </h3>
+
+                    <span>
+                        SEO Manager
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TESTIMONIAL 3 -->
+
+        <div class="testimonial-card">
+
+            <div class="quote">
+                “
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="testimonial-text">
+                Very professional experience from start to finish.
+                The communication was clear and the SEO work was
+                completed exactly according to our requirements.
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    MK
+                </div>
+
+                <div class="client-info">
+
+                    <h3>
+                        Michael Khan
+                    </h3>
+
+                    <span>
+                        Business Owner
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TESTIMONIAL 4 -->
+
+        <div class="testimonial-card">
+
+            <div class="quote">
+                “
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="testimonial-text">
+                Arham has been reliable and easy to work with.
+                His approach to SEO and content was organized,
+                transparent and focused on long-term results.
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    AL
+                </div>
+
+                <div class="client-info">
+
+                    <h3>
+                        Alex Lewis
+                    </h3>
+
+                    <span>
+                        Agency Founder
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TESTIMONIAL 5 -->
+
+        <div class="testimonial-card">
+
+            <div class="quote">
+                “
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="testimonial-text">
+                Excellent service and communication. Arham was
+                responsive throughout the project and delivered
+                quality work within the agreed requirements.
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    RH
+                </div>
+
+                <div class="client-info">
+
+                    <h3>
+                        Ryan Harris
+                    </h3>
+
+                    <span>
+                        E-commerce Owner
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TESTIMONIAL 6 -->
+
+        <div class="testimonial-card">
+
+            <div class="quote">
+                “
+            </div>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="testimonial-text">
+                Professional, responsive and detail-oriented.
+                I appreciated the communication and the quality
+                of the SEO and content work delivered.
+            </p>
+
+            <div class="client">
+
+                <div class="client-avatar">
+                    OW
+                </div>
+
+                <div class="client-info">
+
+                    <h3>
+                        Olivia Wilson
+                    </h3>
+
+                    <span>
+                        Marketing Specialist
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+        <h2>
+            Want to Work Together?
+        </h2>
+
+        <p>
+            Let's discuss your SEO, link building,
+            content or website project.
+        </p>
+
+        <a
+            href="contact.html"
+            class="cta-button"
+        >
+            Start a Conversation →
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Arham. All rights reserved.
+
+</footer>
+
+
+</body>
+
+</html>
